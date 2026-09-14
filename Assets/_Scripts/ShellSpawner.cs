@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ShellSpawner : MonoBehaviour
 {
-    private GameObject shellToSpawn;
-    private float spawnInterval = 2f;
+    public GameObject shellToSpawn;
+    public float spawnInterval = 2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +25,16 @@ public class ShellSpawner : MonoBehaviour
     {
         if (shellToSpawn != null)
         {
-            Instantiate(shellToSpawn, transform.position, transform.rotation);
+            // Define desired rotation angle (X, Y, Z)
+            Quaternion customRotation = Quaternion.Euler(0f, 0f, 90f);
+
+            //Define desired position offset (X, Y, Z)
+            Vector3 positionOffset = new Vector3(0f, 0f, 1.5f);
+
+            // 3. Combine the spawner's position with offset
+            Vector3 customPosition = transform.position + transform.TransformDirection(positionOffset);
+
+            Instantiate(shellToSpawn, customPosition, customRotation);
         }
     }
 }
