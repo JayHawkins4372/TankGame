@@ -25,8 +25,8 @@ public class ShellSpawner : MonoBehaviour
     {
         if (shellToSpawn != null)
         {
-            // Define desired rotation angle (X, Y, Z)
-            Quaternion customRotation = Quaternion.Euler(0f, 0f, 90f);
+            // Combine spawner's rotation, define desired rotation angle (X, Y, Z)
+            Quaternion customRotation = transform.rotation * Quaternion.Euler(90f, 0f, 0f);
 
             //Define desired position offset (X, Y, Z)
             Vector3 positionOffset = new Vector3(0f, 0f, 1.5f);

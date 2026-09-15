@@ -17,7 +17,7 @@ public class Shell : MonoBehaviour
     void Update()
     {
         // Move the object forward relative to its own current rotation every frame
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 
     // This handles the despawning when hitting something
