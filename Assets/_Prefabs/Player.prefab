@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1204893770723267915}
   - component: {fileID: 1729410035311164527}
   - component: {fileID: -4659488189544710621}
-  - component: {fileID: 4379904687858433285}
+  - component: {fileID: 7256625582019865380}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_DefaultActionMap: AM_TankControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!54 &4379904687858433285
+--- !u!54 &7256625582019865380
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
