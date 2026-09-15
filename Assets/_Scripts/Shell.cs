@@ -23,7 +23,17 @@ public class Shell : MonoBehaviour
     // This handles the despawning when hitting something
     private void OnCollisionEnter(Collision collision)
     {
-
+        //if collide with player, ignore
+        if (collision.gameObject.CompareTag("Player") || collision.transform.root.CompareTag("Player")){
+            return;
+        }
+        // 1. Check if the object we ran into has the "Enemy" tag or its parent
+        else if (collision.gameObject.CompareTag("Enemy") || collision.transform.root.CompareTag("Enemy"))
+        {
+            // 2. Delete enemy tank (temporary until health is added)
+            Destroy(collision.transform.root.gameObject);
+            Destroy(collision.gameObject);
+        }
         // Destroy this shell immediately on impact
         Destroy(gameObject);
     }
