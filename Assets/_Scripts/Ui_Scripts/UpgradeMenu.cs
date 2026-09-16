@@ -1,3 +1,5 @@
+//Author: Wade Lawler
+//Last modified: 9/16/2026
 using UnityEngine;
 using UnityEngine.InputSystem;
 
