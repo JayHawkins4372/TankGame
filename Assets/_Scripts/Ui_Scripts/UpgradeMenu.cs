@@ -10,6 +10,8 @@ public class UpgradeMenu : MonoBehaviour
 
     private bool isMenuOpen = false;
 
+    public WaveManager waveManager;
+
     void Start()
     {
         // menu is hidden when the game first starts
@@ -46,6 +48,11 @@ public class UpgradeMenu : MonoBehaviour
             Time.timeScale = 1f; // Resumes gameplay
             Cursor.lockState = CursorLockMode.Locked; // Relocks mouse cursor (temp until touch controls)
             Cursor.visible = false;
+
+            if (waveManager != null)
+            {
+                waveManager.ResumeNextWave();
+            }
         }
     }
 }
