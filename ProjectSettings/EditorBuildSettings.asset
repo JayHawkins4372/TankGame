@@ -8,8 +8,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/_HawkinsJonathan_Work/Workspace_Hawkins_Jonathan.unity
     guid: 6060ca9a6338ee849904340c8a5d928f
+  - enabled: 0
+    path: Assets/_Lawler_Wade/Wade_Testing.unity
+    guid: c179336ebdcdcff4a8b73ed45be4b614
+  - enabled: 1
+    path: Assets/_Levels/Level1.unity
+    guid: 92ab7aac58808a4418410eb12a35e905
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
