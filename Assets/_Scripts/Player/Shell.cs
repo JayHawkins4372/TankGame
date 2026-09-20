@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
-
     public float speed = 10f;
     public float lifetime = 20f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Automatically destroy the shell after 'lifetime' seconds to prevent lag
         Destroy(gameObject, lifetime);
     }
 
@@ -24,6 +22,8 @@ public class Shell : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //if collide with player, ignore
+       
+        
         if (collision.gameObject.CompareTag("Player") || collision.transform.root.CompareTag("Player")){
             return;
         }
