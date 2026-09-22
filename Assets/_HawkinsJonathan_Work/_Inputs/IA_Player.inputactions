@@ -97,7 +97,7 @@
                     "id": "ab1fd6c6-2d04-48e4-aa9f-9ddc76172035",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "InvertVector2",
                     "groups": "",
                     "action": "Turn",
                     "isComposite": false,
