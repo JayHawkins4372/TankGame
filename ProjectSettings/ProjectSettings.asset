@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 2
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -275,7 +275,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 2
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/jonat/Documents/TankGameKey/user.keystore
+  AndroidKeystoreName: C:/Users/jonat/Downloads/user.keystore
   AndroidKeyaliasName: turretkey
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidEnableArm64MTE: 0
