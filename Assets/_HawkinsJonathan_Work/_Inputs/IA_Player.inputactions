@@ -95,9 +95,9 @@
                 {
                     "name": "",
                     "id": "ab1fd6c6-2d04-48e4-aa9f-9ddc76172035",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<Gamepad>/dpad",
                     "interactions": "",
-                    "processors": "InvertVector2",
+                    "processors": "",
                     "groups": "",
                     "action": "Turn",
                     "isComposite": false,
