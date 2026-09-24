@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807947584530225911}
   - component: {fileID: 7061005172883005181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PF_BaseEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -63,6 +63,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1807947584530225911}
     m_Modifications:
+    - target: {fileID: 2701009996516797767, guid: cc90a9053fdae1f48a2612534594d625, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3750162504840861863, guid: cc90a9053fdae1f48a2612534594d625, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.247
@@ -106,6 +110,10 @@ PrefabInstance:
     - target: {fileID: 4665700017352850330, guid: cc90a9053fdae1f48a2612534594d625, type: 3}
       propertyPath: m_Name
       value: PF_BaseEnemyTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665700017352850330, guid: cc90a9053fdae1f48a2612534594d625, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -168,6 +176,10 @@ PrefabInstance:
     - target: {fileID: 7734142980285004719, guid: 32d1f0f7dd7b0c74a915877f95f1ced3, type: 3}
       propertyPath: m_Name
       value: E_Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734142980285004719, guid: 32d1f0f7dd7b0c74a915877f95f1ced3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
