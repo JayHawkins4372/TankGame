@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3750162504840861863}
-  m_Layer: 0
+  - component: {fileID: 3109371323575850688}
+  - component: {fileID: 7059577797132837871}
+  m_Layer: 8
   m_Name: PF_BaseEnemyTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +34,41 @@ Transform:
   - {fileID: 3328224878164310013}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3109371323575850688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665700017352850330}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90779da95e9ac434f902cbef4e29580a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShellSpawner
+  shellToSpawn: {fileID: 4459995077902759004, guid: 8318692836596574daeaf8547f037ffa, type: 3}
+  spawnInterval: 5
+--- !u!65 &7059577797132837871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665700017352850330}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.17, y: 0.46, z: 1.56}
+  m_Center: {x: 0, y: 1.06, z: 0}
 --- !u!1001 &2850093985207372885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,17 +81,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: E_Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 213493448604049682, guid: eadd75940acdeea41943b5b49ccea010, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 701905707197971368, guid: eadd75940acdeea41943b5b49ccea010, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.54533
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 701905707197971368, guid: eadd75940acdeea41943b5b49ccea010, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 701905707197971368, guid: eadd75940acdeea41943b5b49ccea010, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.18395999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 701905707197971368, guid: eadd75940acdeea41943b5b49ccea010, type: 3}
       propertyPath: m_LocalRotation.w

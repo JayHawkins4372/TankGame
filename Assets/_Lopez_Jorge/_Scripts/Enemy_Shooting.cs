@@ -28,7 +28,7 @@ public class Enemy_Shooting : MonoBehaviour
 
     [Header("Firing")]
     [SerializeField] float firingRate = 2f;
-    [SerializeField] float shootRange = 18f;
+    [SerializeField] float shootRange = 20f;
     [SerializeField] float windupTime = 0.4f;
     [SerializeField] float shellSpeed = 12f;
     [SerializeField] float shellDamage = 10f; //This can be changed once we set up a health bar for the player
