@@ -33,7 +33,7 @@ public class EnemyShell : MonoBehaviour
 
         Debug.Log("Shell destroyed by hitting: " + collision.gameObject.name, collision.gameObject);
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     static Transform FindTagged(Transform t, string tag)
