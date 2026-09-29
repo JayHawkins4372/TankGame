@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 174.99982, y: 249.99991}
+  m_AnchoredPosition: {x: 175, y: 249.99988}
   m_SizeDelta: {x: 150, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &764483504960184927
@@ -561,6 +561,7 @@ GameObject:
   - component: {fileID: 1729410035311164527}
   - component: {fileID: -4659488189544710621}
   - component: {fileID: 2846863039589866354}
+  - component: {fileID: 1502853215329853192}
   m_Layer: 6
   m_Name: PF_Player
   m_TagString: Player
@@ -743,6 +744,22 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &1502853215329853192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117018059500182789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.VisualScripting.Flow::Unity.VisualScripting.ScriptMachine
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 90008f5d27535254497cc6f63b46212e, type: 2}
 --- !u!1001 &1837231066498152450
 PrefabInstance:
   m_ObjectHideFlags: 0
