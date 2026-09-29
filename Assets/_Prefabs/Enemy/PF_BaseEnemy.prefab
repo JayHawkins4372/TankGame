@@ -75,7 +75,7 @@ MonoBehaviour:
   moveSpeed: 4
   bodyTurnSpeed: 150
   acceleration: 8
-  Distance: 0.1
+  Distance: 10
   Repathing: 0.25
 --- !u!114 &8629346814010676661
 MonoBehaviour:

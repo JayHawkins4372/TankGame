@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5043128533453892885}
   - component: {fileID: -650737501917613094}
   - component: {fileID: 7982378755937070589}
+  - component: {fileID: -5231589467329178352}
   m_Layer: 9
   m_Name: E_BaseProjectile
   m_TagString: Untagged
@@ -542,3 +543,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459995077902759004}
   m_Mesh: {fileID: 0}
+--- !u!114 &-5231589467329178352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459995077902759004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.VisualScripting.Core::Unity.VisualScripting.Variables
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
