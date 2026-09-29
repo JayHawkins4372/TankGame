@@ -31,8 +31,6 @@ public class EnemyShell : MonoBehaviour
         Transform player = FindTagged(collision.transform, "Player");
         if (player != null) HurtPlayer(player);
 
-        Debug.Log("Shell destroyed by hitting: " + collision.gameObject.name, collision.gameObject);
-
         Destroy(gameObject);
     }
 
