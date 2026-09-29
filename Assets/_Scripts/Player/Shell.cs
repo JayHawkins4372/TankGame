@@ -6,6 +6,7 @@ public class Shell : MonoBehaviour
 {
     public float Bulletspeed = 10f;
     public float lifetime = 20f;
+    public float damage = 10f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +36,6 @@ public class Shell : MonoBehaviour
             // 2. Delete enemy tank (temporary until health is added)
         }
         // Destroy this shell immediately on impact
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
