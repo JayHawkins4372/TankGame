@@ -10,7 +10,7 @@ public class UpgradeData : ScriptableObject
     public string description;
 
     // An identifier so the player script knows what stat to change when clicked
-    // naming format: "SHELL_SPEED", "FIRE_RATE", "MAX_AMMO"
+    // naming format: "SHELL_SPEED", "FIRE_RATE"
     public string upgradeID;
 
     public float modifierValue;
