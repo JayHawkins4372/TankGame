@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
-    public float speed = 10f;
+    public float Bulletspeed = 10f;
     public float lifetime = 20f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,7 +17,7 @@ public class Shell : MonoBehaviour
     void Update()
     {
         // Move the object forward relative to its own current rotation every frame
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * Bulletspeed * Time.deltaTime);
     }
 
     // This handles the despawning when hitting something

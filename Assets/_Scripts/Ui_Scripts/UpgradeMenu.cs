@@ -12,8 +12,11 @@ public class UpgradeMenu : MonoBehaviour
 
     public WaveManager waveManager;
 
+    private UpgradeManager upgradeManager;
+
     void Start()
     {
+        upgradeManager = GetComponent<UpgradeManager>();
         // menu is hidden when the game first starts
         if (menuPanel != null)
         {
@@ -42,6 +45,11 @@ public class UpgradeMenu : MonoBehaviour
             Time.timeScale = 0f; // Pauses gameplay
             Cursor.lockState = CursorLockMode.None; // Unlocks mouse cursor (temp until touch controls)
             Cursor.visible = true;
+
+            if (upgradeManager != null)
+            {
+                upgradeManager.PopulateUpgradeSlots();
+            }
         }
         else
         {
