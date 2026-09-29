@@ -33,8 +33,6 @@ public class Shell : MonoBehaviour
         else if (collision.gameObject.CompareTag("Enemy") || collision.transform.root.CompareTag("Enemy"))
         {
             // 2. Delete enemy tank (temporary until health is added)
-            Destroy(collision.transform.root.gameObject);
-            Destroy(collision.gameObject);
         }
         // Destroy this shell immediately on impact
         Destroy(gameObject);
