@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShell
   speed: 10
-  lifetime: 20
+  lifetime: 5
   damage: 10
   scriptGraphDamageEvent: TakeDamage
 --- !u!33 &7982378755937070589

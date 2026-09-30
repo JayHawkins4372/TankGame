@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/_Lawler_Wade/Wade_Testing.unity
     guid: c179336ebdcdcff4a8b73ed45be4b614
   - enabled: 1
+    path: Assets/_Levels/MainMenu.unity
+    guid: ee4470be1a4411d4c86347e615e4265e
+  - enabled: 1
     path: Assets/_Levels/Level1.unity
     guid: 92ab7aac58808a4418410eb12a35e905
   m_configObjects:
