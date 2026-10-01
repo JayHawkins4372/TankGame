@@ -10,27 +10,32 @@ using Unity.VisualScripting;
 public class UpgradeManager : MonoBehaviour
 {
     [Header("Upgrade Pool")]
-    // Drag ALL Upgrade Assets into this master list pool
+    // All upgrades go into this list
     public List<UpgradeData> allPossibleUpgrades;
 
     [Header("UI Buttons")]
-    // Assign your 3 UI Buttons here
+    // Ui Buttons 1-3
     public Button[] upgradeButtons;
-    // Assign the Text component for each of the 3 buttons
+    // Text components on the Ui buttons
     public TextMeshProUGUI[] buttonTextLabels;
 
     // A temporary internal list to keep track of the 3 upgrades currently drawn
     private List<UpgradeData> activeUpgradesInSlots = new List<UpgradeData>();
 
+    private bool madeSelection = false;
+
     public void PopulateUpgradeSlots()
     {
-        // Clear out whatever choices were listed from the last layout draw
+        //resets for new upgrade selection
+        madeSelection = false;
+        Debug.Log($"[UpgradeManager] PopulateUpgradeSlots() was called! Master Pool Count: {allPossibleUpgrades.Count}");
+        // Clear out previous cards
         activeUpgradesInSlots.Clear();
 
-        // Safety check: Stop the code if you haven't added at least 3 cards to your master pool yet
+        // Stop if there's not at least 3 upgrade cards added
         if (allPossibleUpgrades.Count < 3)
         {
-            Debug.LogError("[UpgradeManager] You need at least 3 upgrades in your master pool list!");
+            Debug.LogError("[UpgradeManager] Need at least 3 upgrades in your master pool list!");
             return;
         }
 
@@ -47,6 +52,8 @@ public class UpgradeManager : MonoBehaviour
             temporaryPool.RemoveAt(randomIndex); // Prevents duplicates
         }
 
+        Debug.Log($"[UpgradeManager] Successfully generated {activeUpgradesInSlots.Count} random cards!");
+
         // Loop through your physical UI buttons on screen and update them with the 3 chosen upgrades
         for (int i = 0; i < upgradeButtons.Length; i++)
         {
@@ -56,49 +63,51 @@ public class UpgradeManager : MonoBehaviour
 
             if (buttonTextLabels[i] != null)
             {
-                // Formats the text: The name is displayed in bold, then skips down a line (\n) for the description
                 buttonTextLabels[i].text = $"<b>{upgrade.upgradeName}</b>\n{upgrade.description}";
             }
+        }
 
-            // Wipe out old button click connections from previous level-ups
-            upgradeButtons[i].onClick.RemoveAllListeners();
-
-            // Fixes a Unity loop memory quirk by locking the current index into its own unique temporary integer variable
-            int slotIndex = i;
-
-            // Tell the button: "When clicked, run the OnUpgradeSelected function and pass your exact slot placement index"
-            upgradeButtons[i].onClick.AddListener(() => OnUpgradeSelected(slotIndex));
+        //rest the upgrade buttons to be clickable again
+        for (int i = 0; i < upgradeButtons.Length; i++)
+        {
+            upgradeButtons[i].interactable = true;
         }
     }
 
-    private void OnUpgradeSelected(int slotIndex)
+        public void SelectSlot0() => ExecuteUpgrade(0);
+        public void SelectSlot1() => ExecuteUpgrade(1);
+        public void SelectSlot2() => ExecuteUpgrade(2);
+
+    private void ExecuteUpgrade(int slotIndex)
     {
-        // Retrieve the exact upgrade card matching the button slot the player just clicked on
+        //check if already upgraded
+        if (madeSelection) return;
+
+        // Safety check to ensure we clicked a valid drawn card slot
+        if (slotIndex >= activeUpgradesInSlots.Count) return;
+
+        //lock in upgrade has been pressed
+        madeSelection = true;
+
+        // Grab our card data
         UpgradeData chosenUpgrade = activeUpgradesInSlots[slotIndex];
+        string variableName = chosenUpgrade.upgradeID;
 
-        // 1. Instantly look through the scene hierarchy to find the GameObject tagged "Player"
-        GameObject player = GameObject.FindWithTag("Player");
+        // 1. Fetch the number right out of Unity's global Scene variables table
+        float currentNumber = Unity.VisualScripting.Variables.Application.Get<float>(variableName);
 
-        if (player != null)
+        // 2. Add your upgrade card's modifier value to it
+        float newNumber = currentNumber + chosenUpgrade.modifierValue;
+
+        // 3. Force the upgraded number straight back into the global Scene variables map
+        Unity.VisualScripting.Variables.Application.Set(variableName, newNumber);
+
+        Debug.Log($"[UpgradeManager] SUCCESS! Upgraded Scene Variable '{variableName}' from {currentNumber} to {newNumber}!");
+
+        // 4. If player chose upgrade, disable upgrade buttons
+        for (int i = 0; i < upgradeButtons.Length; i++)
         {
-            // 2. Ask the player's S_Player graph: "What number is currently saved inside your variable matching our upgradeID?"
-            float currentVal = Variables.Object(player).Get<float>(chosenUpgrade.upgradeID);
-
-            // 3. Take that current number, add your upgrade card's modifier value to it, and inject it straight back into the graph variable
-            Variables.Object(player).Set(chosenUpgrade.upgradeID, currentVal + chosenUpgrade.modifierValue);
-
-            Debug.Log($"[UpgradeManager] Successfully upgraded '{chosenUpgrade.upgradeID}' by {chosenUpgrade.modifierValue}!");
-        }
-        else
-        {
-            Debug.LogError("[UpgradeManager] Missing Player! Ensure your player object has the 'Player' Tag applied.");
-        }
-
-        // Fetch the menu component on this same GameObject to close the UI panel and unpause gameplay
-        UpgradeMenu menu = GetComponent<UpgradeMenu>();
-        if (menu != null)
-        {
-            menu.ToggleMenu();
+            upgradeButtons[i].interactable = false;
         }
     }
 }
