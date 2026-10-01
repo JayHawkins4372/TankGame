@@ -1,5 +1,5 @@
 //Author: Wade Lawler
-//last Modified: 9/17/26
+//last Modified: 9/30/26
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -10,16 +10,16 @@ using Unity.VisualScripting;
 public class UpgradeManager : MonoBehaviour
 {
     [Header("Upgrade Pool")]
-    // All upgrades go into this list
+    //All upgrades go into this list
     public List<UpgradeData> allPossibleUpgrades;
 
     [Header("UI Buttons")]
-    // Ui Buttons 1-3
+    //Ui Buttons 1-3
     public Button[] upgradeButtons;
-    // Text components on the Ui buttons
+    //Text components on the Ui buttons
     public TextMeshProUGUI[] buttonTextLabels;
 
-    // A temporary internal list to keep track of the 3 upgrades currently drawn
+    //A temporary internal list to keep track of the 3 upgrades currently drawn
     private List<UpgradeData> activeUpgradesInSlots = new List<UpgradeData>();
 
     private bool madeSelection = false;
@@ -32,29 +32,30 @@ public class UpgradeManager : MonoBehaviour
         // Clear out previous cards
         activeUpgradesInSlots.Clear();
 
-        // Stop if there's not at least 3 upgrade cards added
+        //Stop if there's not at least 3 upgrade cards added
         if (allPossibleUpgrades.Count < 3)
         {
             Debug.LogError("[UpgradeManager] Need at least 3 upgrades in your master pool list!");
             return;
         }
 
-        // Create a temporary copy of your master pool so we can cross out cards as we pick them
+        //Create a temporary copy of your master pool
         List<UpgradeData> temporaryPool = new List<UpgradeData>(allPossibleUpgrades);
 
-        // Run a loop 3 times to pick 3 completely random, unique upgrade choices
+        //Run loop 3 times to pick upgrade choices at random
         for (int i = 0; i < 3; i++)
         {
             int randomIndex = Random.Range(0, temporaryPool.Count);
             UpgradeData selectedUpgrade = temporaryPool[randomIndex];
 
             activeUpgradesInSlots.Add(selectedUpgrade);
-            temporaryPool.RemoveAt(randomIndex); // Prevents duplicates
+        //Prevents duplicates
+            temporaryPool.RemoveAt(randomIndex); 
         }
 
         Debug.Log($"[UpgradeManager] Successfully generated {activeUpgradesInSlots.Count} random cards!");
 
-        // Loop through your physical UI buttons on screen and update them with the 3 chosen upgrades
+        //Loop through UI buttons on screen and update them with the 3 chosen upgrades
         for (int i = 0; i < upgradeButtons.Length; i++)
         {
             if (i >= activeUpgradesInSlots.Count) break;
@@ -83,28 +84,28 @@ public class UpgradeManager : MonoBehaviour
         //check if already upgraded
         if (madeSelection) return;
 
-        // Safety check to ensure we clicked a valid drawn card slot
+        //Safety check to ensure clicked is a valid drawn card slot
         if (slotIndex >= activeUpgradesInSlots.Count) return;
 
         //lock in upgrade has been pressed
         madeSelection = true;
 
-        // Grab our card data
+        //Grab card data
         UpgradeData chosenUpgrade = activeUpgradesInSlots[slotIndex];
         string variableName = chosenUpgrade.upgradeID;
 
-        // 1. Fetch the number right out of Unity's global Scene variables table
+        //Fetch the variable number from Unity's global Scene variables table
         float currentNumber = Unity.VisualScripting.Variables.Application.Get<float>(variableName);
 
-        // 2. Add your upgrade card's modifier value to it
+        //Add upgrade cards modifier value
         float newNumber = currentNumber + chosenUpgrade.modifierValue;
 
-        // 3. Force the upgraded number straight back into the global Scene variables map
+        //Force new number back into the global Scene variables map
         Unity.VisualScripting.Variables.Application.Set(variableName, newNumber);
 
         Debug.Log($"[UpgradeManager] SUCCESS! Upgraded Scene Variable '{variableName}' from {currentNumber} to {newNumber}!");
 
-        // 4. If player chose upgrade, disable upgrade buttons
+        //If player chose upgrade, disable upgrade buttons
         for (int i = 0; i < upgradeButtons.Length; i++)
         {
             upgradeButtons[i].interactable = false;
