@@ -58,10 +58,10 @@ public class UpgradeMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            if (waveManager != null)
-            {
-                waveManager.ResumeNextWave();
-            }
+            //if (waveManager != null)
+           // {
+            //    waveManager.ResumeNextWave();
+           // }
         }
     }
 }

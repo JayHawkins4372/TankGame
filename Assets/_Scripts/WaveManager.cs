@@ -3,12 +3,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public UpgradeMenu upgradeMenu;
     public Transform[] spawnPoints;
+
+    //This is for Ui
+    public TextMeshProUGUI enemiesRemaining;
+
+    //to track how many enemies remain
+    GameObject[] activeEnemies;
 
     public int currentWave = 1;
     public int enemiesToSpawn = 3;
@@ -42,12 +49,17 @@ public class WaveManager : MonoBehaviour
 
         playerTransform = playerObj.transform;
 
-        GameObject[] activeEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        activeEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        enemiesRemaining.text = ("enemies: " + activeEnemies.Length.ToString());
+
+
 
         if (activeEnemies.Length == 0)
         {
-            Debug.Log("Wave cleared successfully");
             isWaveActive = false;
+            Debug.Log("Wave cleared successfully");
+            
             OnWaveCleared();
         }
     }
@@ -162,6 +174,7 @@ public class WaveManager : MonoBehaviour
 
     private void OnWaveCleared()
     {
+        if (isWaveActive) return;
         //open upgradeMenu
         if (upgradeMenu != null)
         {
