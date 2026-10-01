@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1240897314686994843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112231504518111267}
+  m_Layer: 8
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &112231504518111267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240897314686994843}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3328224878164310013}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4665700017352850330
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3750162504840861863}
-  - component: {fileID: 3109371323575850688}
   - component: {fileID: 7059577797132837871}
   m_Layer: 8
   m_Name: PF_BaseEnemyTurret
@@ -34,20 +64,6 @@ Transform:
   - {fileID: 3328224878164310013}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3109371323575850688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4665700017352850330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90779da95e9ac434f902cbef4e29580a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShellSpawner
-  shellToSpawn: {fileID: 4459995077902759004, guid: 8318692836596574daeaf8547f037ffa, type: 3}
-  spawnInterval: 5
 --- !u!65 &7059577797132837871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67,7 +83,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.58, z: 1.21}
+  m_Size: {x: 2.08, y: 0.58, z: 3.53}
   m_Center: {x: 0, y: 1.12, z: 0}
 --- !u!1001 &2850093985207372885
 PrefabInstance:
@@ -127,7 +143,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 701905707197971368, guid: eadd75940acdeea41943b5b49ccea010, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 112231504518111267}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eadd75940acdeea41943b5b49ccea010, type: 3}
 --- !u!4 &3328224878164310013 stripped
