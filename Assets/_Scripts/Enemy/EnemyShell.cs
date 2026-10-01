@@ -1,3 +1,9 @@
+/*
+ * Author [Lopez-Sotelo, Jorge]
+ * Date Created [09/01/2029]
+ * Date Modified [09/30/2026 16:04]
+ */
+
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -21,7 +27,7 @@ public class EnemyShell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * speed * Time.deltaTime); //Direction  of the shell
     }
 
     private void OnCollisionEnter(Collision collision)

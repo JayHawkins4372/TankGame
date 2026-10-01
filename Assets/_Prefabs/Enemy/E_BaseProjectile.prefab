@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 2535755439460421773}
   - component: {fileID: 3893717142488756771}
   - component: {fileID: 6372668738454126095}
-  - component: {fileID: 53063551334638420}
   - component: {fileID: 5043128533453892885}
   - component: {fileID: -650737501917613094}
   - component: {fileID: 7982378755937070589}
   - component: {fileID: -5231589467329178352}
+  - component: {fileID: 7942864118318849246}
   m_Layer: 9
   m_Name: E_BaseProjectile
   m_TagString: Untagged
@@ -469,29 +469,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &53063551334638420
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4459995077902759004}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.13
-  m_Height: 0.6
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.06, z: 0}
 --- !u!54 &5043128533453892885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -558,3 +535,26 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!136 &7942864118318849246
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459995077902759004}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.125
+  m_Height: 0.5000001
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

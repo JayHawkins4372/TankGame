@@ -59,7 +59,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.98, y: 1.59, z: 3.37}
+  m_Size: {x: 2.3, y: 1.59, z: 3.37}
   m_Center: {x: 0, y: 0.73, z: 0}
 --- !u!114 &1599910758896155278
 MonoBehaviour:
@@ -76,7 +76,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hull: {fileID: 4869247421543521208}
   moveSpeed: 4
-  bodyTurnSpeed: 150
+  bodyTurnSpeed: 200
   acceleration: 8
   Distance: 10
   Repathing: 0.25
@@ -96,14 +96,14 @@ MonoBehaviour:
   turret: {fileID: 3049272310517285826}
   muzzle: {fileID: 552390689668372916}
   shellPrefab: {fileID: -650737501917613094, guid: 8318692836596574daeaf8547f037ffa, type: 3}
-  turretTurnSpeed: 60
+  turretTurnSpeed: 45
   rangeTolerance: 5
   marginOfError: 0.5
   leadTarget: 1
-  firingRate: 0.5
+  firingRate: 1
   shootRange: 20
   windupTime: 1.36
-  shellSpeed: 25
+  shellSpeed: 15
   shellDamage: 10
   obstacleMask:
     serializedVersion: 2
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.VisualScripting.Core::Unity.VisualScripting.Variables
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"startHealth","value":{"$content":50.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"startHealth","value":{"$content":20.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &1204513053893835063
@@ -272,7 +272,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_BaseEnemyTurret
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3109371323575850688, guid: cc90a9053fdae1f48a2612534594d625, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3328224878164310013, guid: cc90a9053fdae1f48a2612534594d625, type: 3}
