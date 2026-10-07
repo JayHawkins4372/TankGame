@@ -128,8 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275a835575bbc4645ada5101e2001abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 10
+  explosionPF: {fileID: 8113625155265737043, guid: 81a2280f58afd2b4c9107070546d80a6, type: 3}
+  Bulletspeed: 10
   lifetime: 20
+  damage: 10
 --- !u!54 &-5426725793126919740
 Rigidbody:
   m_ObjectHideFlags: 0
