@@ -1,7 +1,7 @@
 /*
  *Author[Lopez-Sotelo, Jorge]
  * Date Created[09 / 20 / 2026]
- * Last Updated[09 / 20 / 2026]
+ * Last Updated[10 / 05 / 2026]
  * []
  */
 using NUnit.Framework.Constraints;
@@ -14,6 +14,11 @@ public class Enemy_Shooting : MonoBehaviour
     [Header("Target")]
     [SerializeField] Transform target;
 
+    [Header("Sound")]
+    [SerializeField] AudioSource FireAudioSource;
+    [SerializeField] AudioClip FireSound;
+    
+    
     [Header("Parts")]
     [SerializeField] Transform turret;
     [SerializeField] Transform muzzle;
@@ -150,5 +155,8 @@ public class Enemy_Shooting : MonoBehaviour
         EnemyShell shell = Instantiate(shellPrefab, muzzle.position, Quaternion.FromToRotation(Vector3.up, aimDir));
         shell.speed = shellSpeed;
         shell.damage = shellDamage;
+
+        if (FireAudioSource != null && FireSound != null)
+            FireAudioSource.PlayOneShot(FireSound);
     }
 }

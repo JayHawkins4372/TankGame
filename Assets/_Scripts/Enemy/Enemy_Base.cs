@@ -17,6 +17,10 @@ public class Enemy_Base : MonoBehaviour
     [Header("Target")]
     [SerializeField] Transform target;
 
+    [Header("Sound")]
+    [SerializeField] AudioSource moveAudioSource;
+    [SerializeField] AudioClip engineSound;
+
     /// <summary>
     /// Drop the enemy body prefab or enemy prefab here to active the enemy(whichever works best)
     /// </summary>
@@ -49,6 +53,12 @@ public class Enemy_Base : MonoBehaviour
         if (hull == null) hull = transform;
         repathTimer = Random.Range(0f, Repathing);
 
+        if (moveAudioSource != null && engineSound != null)
+        {
+            moveAudioSource.clip = engineSound;
+            moveAudioSource.loop = true;
+        }
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -75,6 +85,13 @@ public class Enemy_Base : MonoBehaviour
         {
             repathTimer = Repathing;
             agent.SetDestination(target.position);
+        }
+
+        bool isMoving = agent.velocity.sqrMagnitude > 0.1f;
+        if(moveAudioSource != null)
+        {
+            if (isMoving && !moveAudioSource.isPlaying) moveAudioSource.Play();
+            else if (!isMoving && moveAudioSource.isPlaying) moveAudioSource.Stop();
         }
 
         Vector3 toSteer = agent.steeringTarget - transform.position;
