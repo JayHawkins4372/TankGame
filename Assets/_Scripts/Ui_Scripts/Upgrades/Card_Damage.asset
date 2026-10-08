@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149887b2e14691549b2b535718ff31b1, type: 3}
-  m_Name: Card_TurnSpeed
+  m_Name: Card_Damage
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
-  upgradeName: Turn Speed
-  description: Boosts Player turn speed!
-  upgradeID: turnSpd
-  modifierValue: 2
+  upgradeName: Shell Damage
+  description: Upgrade your shell damage!
+  upgradeID: damage
+  modifierValue: 1

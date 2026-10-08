@@ -13,6 +13,7 @@ public class WaveManager : MonoBehaviour
 
     //This is for Ui
     public TextMeshProUGUI enemiesRemaining;
+    public TextMeshProUGUI waveUi;
 
     //to track how many enemies remain
     GameObject[] activeEnemies;
@@ -51,8 +52,8 @@ public class WaveManager : MonoBehaviour
 
         activeEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        enemiesRemaining.text = ("enemies: " + activeEnemies.Length.ToString());
-
+        enemiesRemaining.text = ("Enemies: " + activeEnemies.Length.ToString());
+        waveUi.text = ("Wave: " + currentWave);
 
 
         if (activeEnemies.Length == 0)

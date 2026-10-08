@@ -5,6 +5,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+//using ShellSpawner;
+//using Shell;
 
 
 public class UpgradeManager : MonoBehaviour
@@ -18,6 +20,10 @@ public class UpgradeManager : MonoBehaviour
     public Button[] upgradeButtons;
     //Text components on the Ui buttons
     public TextMeshProUGUI[] buttonTextLabels;
+
+    //references to other C# scripts
+    public ShellSpawner shellSpawner;
+    public Shell shell;
 
     //A temporary internal list to keep track of the 3 upgrades currently drawn
     private List<UpgradeData> activeUpgradesInSlots = new List<UpgradeData>();
@@ -94,21 +100,38 @@ public class UpgradeManager : MonoBehaviour
         UpgradeData chosenUpgrade = activeUpgradesInSlots[slotIndex];
         string variableName = chosenUpgrade.upgradeID;
 
-        //Fetch the variable number from Unity's global Scene variables table
-        float currentNumber = Unity.VisualScripting.Variables.Application.Get<float>(variableName);
-
-        //Add upgrade cards modifier value
-        float newNumber = currentNumber + chosenUpgrade.modifierValue;
-
-        //Force new number back into the global Scene variables map
-        Unity.VisualScripting.Variables.Application.Set(variableName, newNumber);
-
-        Debug.Log($"[UpgradeManager] SUCCESS! Upgraded Scene Variable '{variableName}' from {currentNumber} to {newNumber}!");
-
-        //If player chose upgrade, disable upgrade buttons
-        for (int i = 0; i < upgradeButtons.Length; i++)
+        if (Unity.VisualScripting.Variables.Application.IsDefined(variableName))
         {
-            upgradeButtons[i].interactable = false;
+            //Fetch the variable number from Unity's global Scene variables table
+            float currentNumber = Unity.VisualScripting.Variables.Application.Get<float>(variableName);
+
+            //Add upgrade cards modifier value
+            float newNumber = currentNumber + chosenUpgrade.modifierValue;
+
+            //Force new number back into the global Scene variables map
+            Unity.VisualScripting.Variables.Application.Set(variableName, newNumber);
+
+            Debug.Log($"[UpgradeManager] SUCCESS! Upgraded Scene Variable '{variableName}' from {currentNumber} to {newNumber}!");
         }
+        else
+        {
+            switch (variableName)
+            {
+                case "damage":
+                    shellSpawner.baseShellDamage += chosenUpgrade.modifierValue;
+                    Debug.Log($"[UpgradeManager] C# Upgrade SUCCESS! damage is now {shellSpawner.baseShellDamage}");
+                    break;
+
+                case "spawnInterval":
+                    shellSpawner.spawnInterval -= chosenUpgrade.modifierValue;
+                    Debug.Log($"[UpgradeManager] C# Upgrade SUCCESS! fireRate is now {shellSpawner.spawnInterval}");
+                    break;
+            }
+        }
+            //If player chose upgrade, disable upgrade buttons
+            for (int i = 0; i < upgradeButtons.Length; i++)
+            {
+                upgradeButtons[i].interactable = false;
+            }
     }
 }

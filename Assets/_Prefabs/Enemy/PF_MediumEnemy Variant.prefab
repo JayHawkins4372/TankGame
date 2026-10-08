@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1204513053893835063, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: _data._json
+      value: '{"nest":{"source":"Macro","macro":null,"embed":null}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204513053893835063, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: _data._objectReferences.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1807947584530225911, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.655
@@ -55,6 +63,10 @@ PrefabInstance:
     - target: {fileID: 6084395598407794564, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_Name
       value: PF_MediumEnemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248661829651357213, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 7061005172883005181, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_IsTrigger
