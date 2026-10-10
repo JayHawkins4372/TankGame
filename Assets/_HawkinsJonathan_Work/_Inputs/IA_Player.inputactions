@@ -104,6 +104,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "0e06f753-b826-48fe-be8b-753267aed52e",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
                     "id": "d42b1f72-71e5-48c6-aa71-0edac2cad6c0",
                     "path": "2DVector",
