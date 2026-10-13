@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1599910758896155278}
   - component: {fileID: 8629346814010676661}
   - component: {fileID: 7003021321597208060}
-  - component: {fileID: 4823106789695760008}
   - component: {fileID: 6248661829651357213}
   - component: {fileID: 1204513053893835063}
   - component: {fileID: 7385887146602903115}
@@ -54,12 +53,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Base
   target: {fileID: 0}
-  moveAudioSource: {fileID: -3196216814353461309}
+  moveAudioSource: {fileID: 4642585173476551810}
   engineSound: {fileID: 8300000, guid: 8d3a6691200754b44a050adb48adf15e, type: 3}
   hull: {fileID: 4869247421543521208}
-  moveSpeed: 10
-  bodyTurnSpeed: 30
-  acceleration: 1
+  moveSpeed: 4
+  bodyTurnSpeed: 150
+  acceleration: 8
   Distance: 10
   Repathing: 0.25
 --- !u!114 &8629346814010676661
@@ -80,14 +79,14 @@ MonoBehaviour:
   turret: {fileID: 3049272310517285826}
   muzzle: {fileID: 427756285625127964}
   shellPrefab: {fileID: -650737501917613094, guid: 8318692836596574daeaf8547f037ffa, type: 3}
-  turretTurnSpeed: 45
+  turretTurnSpeed: 120
   rangeTolerance: 5
-  marginOfError: 0.5
+  marginOfError: 3
   leadTarget: 1
-  firingRate: 1
+  firingRate: 2
   shootRange: 20
-  windupTime: 1.36
-  shellSpeed: 15
+  windupTime: 0.4
+  shellSpeed: 12
   shellDamage: 10
   obstacleMask:
     serializedVersion: 2
@@ -114,33 +113,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!54 &4823106789695760008
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6084395598407794564}
-  serializedVersion: 5
-  m_Mass: 9
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &6248661829651357213
 MonoBehaviour:
   m_ObjectHideFlags: 0
