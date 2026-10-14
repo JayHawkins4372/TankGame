@@ -37,13 +37,18 @@ public class Shell : MonoBehaviour
         // 1. Check if the object we ran into has the "Enemy" tag or its parent
         else if (collision.gameObject.CompareTag("Enemy") || collision.transform.root.CompareTag("Enemy"))
         {
+            Enemy_Health enemy = collision.gameObject.GetComponent<Enemy_Health>();
 
-           //After dropping the Explosion Prefab inside serealized field, the explotion will play right where the enemy position was.
+            if (enemy != null)
+            {
+                enemy.takeDamage(damage);
+            }
+
+            //After dropping the Explosion Prefab inside serealized field, the explotion will play right where the enemy position was.
             if (explosionPF != null)
                 Instantiate(explosionPF, collision.transform.root.position, Quaternion.identity);
 
-            Destroy(collision.transform.root.gameObject);
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
             return;
         }
         else Destroy(gameObject);

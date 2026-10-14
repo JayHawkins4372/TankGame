@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1033670718797059661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: maxHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1204513053893835063, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: _data._json
       value: '{"nest":{"source":"Macro","macro":null,"embed":null}}'

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1204513053893835063}
   - component: {fileID: 7385887146602903115}
   - component: {fileID: -3196216814353461309}
+  - component: {fileID: 1033670718797059661}
   m_Layer: 8
   m_Name: PF_BaseEnemy
   m_TagString: Enemy
@@ -261,6 +262,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1033670718797059661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6084395598407794564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a863d171c04014b99bc7d27773fe82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy_Health
+  maxHealth: 30
+  currentHealth: 0
 --- !u!1001 &315546531904664639
 PrefabInstance:
   m_ObjectHideFlags: 0
