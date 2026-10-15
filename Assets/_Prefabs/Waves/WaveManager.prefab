@@ -50,6 +50,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  enemiesRemaining: {fileID: 0}
+  waveUi: {fileID: 0}
   currentWave: 1
   enemiesToSpawn: 3
   minimumSpawnDistance: 25

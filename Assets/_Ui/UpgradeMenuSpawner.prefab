@@ -394,7 +394,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 277.4, y: 130.1}
+  m_SizeDelta: {x: 429.4, y: 174.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7809667016113354953
 CanvasRenderer:
@@ -477,7 +477,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 562135430745648644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7744581643719345876}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: SelectSlot1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3749598945351233209
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +502,7 @@ GameObject:
   - component: {fileID: 3286733326700462759}
   - component: {fileID: 8699089950488968653}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Upgrade1Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,7 +638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1100829962377057536}
-  - component: {fileID: 7248633461257998479}
+  - component: {fileID: 910671434533953735}
   m_Layer: 0
   m_Name: UpgradeMenuSpawner
   m_TagString: Untagged
@@ -651,7 +663,7 @@ Transform:
   - {fileID: 1251183868046322117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7248633461257998479
+--- !u!114 &910671434533953735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -676,6 +688,7 @@ GameObject:
   - component: {fileID: 5761148071897926268}
   - component: {fileID: 647377095039958175}
   - component: {fileID: 7717032953080396640}
+  - component: {fileID: 7744581643719345876}
   m_Layer: 5
   m_Name: Upgrade screen
   m_TagString: Untagged
@@ -745,6 +758,35 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7744581643719345876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462723349928628504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c438020def94f334ab599de6ca254ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
+  allPossibleUpgrades:
+  - {fileID: 11400000, guid: f99466861ceef0c4892cc07e7cf7baf5, type: 2}
+  - {fileID: 11400000, guid: 2c64203e1d245214ba8983e2e35fd7d5, type: 2}
+  - {fileID: 11400000, guid: e94802688de4d9d4ba281edcf041aa3c, type: 2}
+  - {fileID: 11400000, guid: 7b58a4212645cf645bc1616edf298997, type: 2}
+  - {fileID: 11400000, guid: b92b8e05d97e8d348aef76d83473ef45, type: 2}
+  - {fileID: 11400000, guid: 78c4ace9188e7784fa80b7857f7ed005, type: 2}
+  upgradeButtons:
+  - {fileID: 9084483922399993503}
+  - {fileID: 5320631706920404123}
+  - {fileID: 7014997091512416659}
+  buttonTextLabels:
+  - {fileID: 8699089950488968653}
+  - {fileID: 5715203539846047110}
+  - {fileID: 8765469337629157057}
+  shellSpawner: {fileID: 0}
+  shell: {fileID: 0}
 --- !u!1 &4669870464326935120
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,8 +962,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 475.22, y: 0}
-  m_SizeDelta: {x: 277.4, y: 130.1}
+  m_AnchoredPosition: {x: 301, y: 0}
+  m_SizeDelta: {x: 429.4, y: 174.5}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4819973501088069827
 CanvasRenderer:
@@ -1004,7 +1046,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5666094024122865863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7744581643719345876}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: SelectSlot0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5412331959640813309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,7 +1470,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7248633461257998479}
+      - m_Target: {fileID: 910671434533953735}
         m_TargetAssemblyTypeName: UpgradeMenu, Assembly-CSharp
         m_MethodName: ToggleMenu
         m_Mode: 1
@@ -1568,8 +1622,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -475.22, y: 0}
-  m_SizeDelta: {x: 277.4, y: 130.1}
+  m_AnchoredPosition: {x: -301, y: 0}
+  m_SizeDelta: {x: 429.4, y: 174.5}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &4610757580789503349
 CanvasRenderer:
@@ -1652,4 +1706,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4737855762550766160}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7744581643719345876}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: SelectSlot2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
