@@ -41,8 +41,8 @@ public class UpgradeMenu : MonoBehaviour
         {
         //Pauses gameplay
             Time.timeScale = 0f; 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
 
             //get the manager within upgradescreen
             UpgradeManager manager = menuPanel.GetComponentInChildren<UpgradeManager>();
@@ -55,8 +55,8 @@ public class UpgradeMenu : MonoBehaviour
         {
         //Resume gameplay
             Time.timeScale = 1f; 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+           // Cursor.visible = false;
 
             //if (waveManager != null)
            // {

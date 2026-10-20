@@ -149,10 +149,20 @@ public class Enemy_Shooting : MonoBehaviour
 
     void Fire()
     {
-        float yaw = turret.eulerAngles.y + Random.Range(-marginOfError, marginOfError);
-        Vector3 aimDir = Quaternion.Euler(0f, yaw, 0f) * Vector3.forward;
+        // 1. Combine the muzzle's rotation with the 90-degree flip your shell prefab needs
+        // Plus add the random horizontal margin of error spread
+        float spreadAngle = Random.Range(-marginOfError, marginOfError);
+        Quaternion customRotation = muzzle.rotation * Quaternion.Euler(90f, spreadAngle, 0f);
 
-        EnemyShell shell = Instantiate(shellPrefab, muzzle.position, Quaternion.FromToRotation(Vector3.up, aimDir));
+        // 2. Define the desired position offset (pushing it 1.5 units out the front of the barrel)
+        Vector3 positionOffset = new Vector3(0f, 0f, 1.5f);
+
+        // 3. Combine the muzzle's position with the local offset so it never spawns inside the tank
+        Vector3 customPosition = muzzle.position + muzzle.TransformDirection(positionOffset);
+
+        // 4. Spawn the enemy shell using your player's exact method
+        EnemyShell shell = Instantiate(shellPrefab, customPosition, customRotation);
+
         shell.speed = shellSpeed;
         shell.damage = shellDamage;
 
