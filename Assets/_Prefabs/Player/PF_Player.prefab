@@ -37,6 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2952210818549550513}
+  - {fileID: 2766517608419895279}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2028155926046942705
@@ -123,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.VisualScripting.Core::Unity.VisualScripting.Variables
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"startHealth","value":{"$content":100.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"VignetteIntensity","value":{"$content":0.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &1729410035311164527
@@ -365,6 +367,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2094576925496434125, guid: 9673abf2308f0174783384051ee4cfa3, type: 3}
   m_PrefabInstance: {fileID: 2838629396277859952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5933113890404511534
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7797373193202272798}
+    m_Modifications:
+    - target: {fileID: 2961700840593181939, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_Name
+      value: VignetteEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.55772823
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.6797817
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.44405
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+--- !u!4 &2766517608419895279 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8372757674647095489, guid: 54db2dbe3bbc76a47bc6ed8ffe92f9ef, type: 3}
+  m_PrefabInstance: {fileID: 5933113890404511534}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7252866128551247743
 PrefabInstance:
