@@ -139,14 +139,28 @@ public class UpgradeManager : MonoBehaviour
         string visualText = $"{chosenUpgrade.upgradeName} +{chosenUpgrade.modifierValue}";
         if (variableName == "spawnInterval")
         {
-            visualText = $"{chosenUpgrade.upgradeName} Up!"; // Looks cleaner than showing a negative interval decimal
+            visualText = $"{chosenUpgrade.upgradeName} Up!";
         }
 
-        // 2. Find the main UpgradeMenu script living on your parent UI objects
+        // 1. First look up the parent chain
         UpgradeMenu menuScript = GetComponentInParent<UpgradeMenu>();
+
+        // 2. FIXED: Removed "Object." prefix entirely to stop the namespace conflict.
+        // We use FindFirstObjectByType directly, or its fallback alternative below.
+        if (menuScript == null)
+        {
+            menuScript = FindFirstObjectByType<UpgradeMenu>();
+
+            // If your Unity version prefers the older stable naming convention:
+            if (menuScript == null)
+            {
+                menuScript = FindObjectOfType<UpgradeMenu>();
+            }
+        }
+
+        // 3. Trigger the popup text cleanly
         if (menuScript != null)
         {
-            // 3. Hand the text string off to the menu so it closes everything and spawns the popup over your tank
             menuScript.TriggerUpgradePopup(visualText);
         }
         else
