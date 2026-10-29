@@ -71,10 +71,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void TriggerUpgradePopup(string cardText)
     {
-        // 1. Close the card UI panel and resume Time.timeScale back to 1f FIRST
-        //ToggleMenu();
 
-        // 2. Now that time is running, spawn the visual text over the player
         if (upgradePopupPrefab != null && playerTransform != null)
         {
             Vector3 spawnPos = playerTransform.position + Vector3.up * 3f;
