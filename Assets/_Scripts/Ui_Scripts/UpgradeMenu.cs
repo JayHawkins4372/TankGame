@@ -12,6 +12,10 @@ public class UpgradeMenu : MonoBehaviour
 
     public WaveManager waveManager;
 
+    //for upgradeUi
+    [SerializeField] private GameObject upgradePopupPrefab;
+    [SerializeField] private Transform playerTransform;
+
     void Start()
     {
         //menu is hidden when the game first starts
@@ -62,6 +66,25 @@ public class UpgradeMenu : MonoBehaviour
            // {
             //    waveManager.ResumeNextWave();
            // }
+        }
+    }
+
+    public void TriggerUpgradePopup(string cardText)
+    {
+        // 1. Close the card UI panel and resume Time.timeScale back to 1f FIRST
+        ToggleMenu();
+
+        // 2. Now that time is running, spawn the visual text over the player
+        if (upgradePopupPrefab != null && playerTransform != null)
+        {
+            Vector3 spawnPos = playerTransform.position + Vector3.up * 3f;
+            GameObject popup = Instantiate(upgradePopupPrefab, spawnPos, Quaternion.identity);
+
+            UpgradeTextEffect effectScript = popup.GetComponent<UpgradeTextEffect>();
+            if (effectScript != null)
+            {
+                effectScript.SetupUpgradePopup(cardText, playerTransform);
+            }
         }
     }
 }

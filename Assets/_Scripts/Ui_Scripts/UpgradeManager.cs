@@ -133,5 +133,25 @@ public class UpgradeManager : MonoBehaviour
             {
                 upgradeButtons[i].interactable = false;
             }
+
+        //upgradeUiPopup
+        // 1. Format the text string nicely based on whether it's a positive addition or a negative interval cut
+        string visualText = $"{chosenUpgrade.upgradeName} +{chosenUpgrade.modifierValue}";
+        if (variableName == "spawnInterval")
+        {
+            visualText = $"{chosenUpgrade.upgradeName} Up!"; // Looks cleaner than showing a negative interval decimal
+        }
+
+        // 2. Find the main UpgradeMenu script living on your parent UI objects
+        UpgradeMenu menuScript = GetComponentInParent<UpgradeMenu>();
+        if (menuScript != null)
+        {
+            // 3. Hand the text string off to the menu so it closes everything and spawns the popup over your tank
+            menuScript.TriggerUpgradePopup(visualText);
+        }
+        else
+        {
+            Debug.LogError("[UpgradeManager] Could not find UpgradeMenu script in parent objects!");
+        }
     }
 }
