@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   explosionPF: {fileID: 8113625155265737043, guid: 81a2280f58afd2b4c9107070546d80a6, type: 3}
+  damagePopupPrefab: {fileID: 7411815856781764614, guid: b5b9d20aeaec2cc40a7743605478ccc7, type: 3}
   Bulletspeed: 10
   lifetime: 20
   damage: 10

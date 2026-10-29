@@ -1,12 +1,13 @@
 //Author: Wade lawler
-//Last Modified: 9/23/26
+//Last Modified: 10/29/26
 //Last Modified: 10/06/2026 (Jorge Lopez-Sotelo)
 using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
     [SerializeField] GameObject explosionPF;  //Drop PF_Explosion on here from VFX
-    
+    [SerializeField] GameObject damagePopupPrefab; // for Ui
+
     public float Bulletspeed = 10f;
     public float lifetime = 20f;
     public float damage = 10f;
@@ -42,6 +43,19 @@ public class Shell : MonoBehaviour
             if (enemy != null)
             {
                 enemy.takeDamage(damage);
+                Debug.Log("Found and dealt damage to enemy");
+
+                //for damage Ui
+                Vector3 spawnPos = enemy.transform.position + Vector3.up * 2.5f;
+                GameObject popup = Instantiate(damagePopupPrefab, spawnPos, Quaternion.identity);
+
+                // Pass the damage number to the text script
+                DamageTextEffect effectScript = popup.GetComponent<DamageTextEffect>();
+                if (effectScript != null)
+                {
+                    // Pass the damage number AND the enemy transform so it tracks
+                    effectScript.SetupPopup(damage, enemy.transform);
+                }
             }
 
             //After dropping the Explosion Prefab inside serealized field, the explotion will play right where the enemy position was.

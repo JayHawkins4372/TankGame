@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291219486336036328, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1033670718797059661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: maxHealth
       value: 40
@@ -64,6 +68,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: cb9f4cdca5b76a94b8d5d427ab7848e8, type: 2}
+    - target: {fileID: 4962666158874496933, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6084395598407794564, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_Name
       value: PF_MediumEnemy Variant
@@ -74,6 +82,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7061005172883005181, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321062423549368272, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
