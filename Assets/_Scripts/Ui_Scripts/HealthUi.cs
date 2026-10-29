@@ -22,7 +22,7 @@ public class HealthUi : MonoBehaviour
         healthSlider.maxValue = Unity.VisualScripting.Variables.Application.Get<float>("maxHealth");
 
         healthSlider.value = Unity.VisualScripting.Variables.Application.Get<float>("currentHealth");
-        Debug.Log($"[HealthUi] Current player health: {Unity.VisualScripting.Variables.Application.Get<float>("currentHealth")}");
+        //Debug.Log($"[HealthUi] Current player health: {Unity.VisualScripting.Variables.Application.Get<float>("currentHealth")}");
 
     }
 }

@@ -21,6 +21,10 @@ public class UpgradeManager : MonoBehaviour
     //Text components on the Ui buttons
     public TextMeshProUGUI[] buttonTextLabels;
 
+    //tracking for selection
+    private int selectedSlotIndex = -1;
+    private bool madeSelection = false;
+
     //references to other C# scripts
     public ShellSpawner shellSpawner;
     public Shell shell;
@@ -28,7 +32,6 @@ public class UpgradeManager : MonoBehaviour
     //A temporary internal list to keep track of the 3 upgrades currently drawn
     private List<UpgradeData> activeUpgradesInSlots = new List<UpgradeData>();
 
-    private bool madeSelection = false;
 
     public void PopulateUpgradeSlots()
     {
@@ -81,25 +84,33 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-        public void SelectSlot0() => ExecuteUpgrade(0);
-        public void SelectSlot1() => ExecuteUpgrade(1);
-        public void SelectSlot2() => ExecuteUpgrade(2);
+        public void SelectSlot0() => SelectUpgrade(0);
+        public void SelectSlot1() => SelectUpgrade(1);
+        public void SelectSlot2() => SelectUpgrade(2);
 
-    private void ExecuteUpgrade(int slotIndex)
+    public void SelectUpgrade(int slotIndex)
+    {
+        //Safety check to ensure clicked is a valid drawn card slot
+        if (slotIndex >= activeUpgradesInSlots.Count) return;
+
+        selectedSlotIndex = slotIndex;
+    }
+
+    public void ExecuteUpgrade(int selectedSlotIndex)
     {
         //check if already upgraded
         if (madeSelection) return;
 
-        //Safety check to ensure clicked is a valid drawn card slot
-        if (slotIndex >= activeUpgradesInSlots.Count) return;
+
 
         //lock in upgrade has been pressed
         madeSelection = true;
 
         //Grab card data
-        UpgradeData chosenUpgrade = activeUpgradesInSlots[slotIndex];
+        UpgradeData chosenUpgrade = activeUpgradesInSlots[selectedSlotIndex];
         string variableName = chosenUpgrade.upgradeID;
 
+        //Do the upgrade
         if (Unity.VisualScripting.Variables.Application.IsDefined(variableName))
         {
             //Fetch the variable number from Unity's global Scene variables table
@@ -139,14 +150,28 @@ public class UpgradeManager : MonoBehaviour
         string visualText = $"{chosenUpgrade.upgradeName} +{chosenUpgrade.modifierValue}";
         if (variableName == "spawnInterval")
         {
-            visualText = $"{chosenUpgrade.upgradeName} Up!"; // Looks cleaner than showing a negative interval decimal
+            visualText = $"{chosenUpgrade.upgradeName} Up!";
         }
 
-        // 2. Find the main UpgradeMenu script living on your parent UI objects
+        // 1. First look up the parent chain
         UpgradeMenu menuScript = GetComponentInParent<UpgradeMenu>();
+
+        // 2. FIXED: Removed "Object." prefix entirely to stop the namespace conflict.
+        // We use FindFirstObjectByType directly, or its fallback alternative below.
+        if (menuScript == null)
+        {
+            menuScript = FindAnyObjectByType<UpgradeMenu>();
+
+            // If your Unity version prefers the older stable naming convention:
+            if (menuScript == null)
+            {
+                menuScript = FindAnyObjectByType<UpgradeMenu>();
+            }
+        }
+
+        // 3. Trigger the popup text cleanly
         if (menuScript != null)
         {
-            // 3. Hand the text string off to the menu so it closes everything and spawns the popup over your tank
             menuScript.TriggerUpgradePopup(visualText);
         }
         else
