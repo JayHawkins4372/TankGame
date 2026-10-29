@@ -100,6 +100,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321062423549368272, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385887146602903115, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_Size.y
+      value: 2.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385887146602903115, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_Center.y
+      value: 0.92
+      objectReference: {fileID: 0}
     - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: firingRate
       value: 0.05

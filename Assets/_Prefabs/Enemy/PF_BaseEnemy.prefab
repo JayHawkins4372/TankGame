@@ -163,8 +163,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.66, y: 1.12, z: 5.64}
-  m_Center: {x: 0, y: 0.44, z: 0}
+  m_Size: {x: 3.66, y: 2, z: 5.64}
+  m_Center: {x: 0, y: 1.08, z: 0}
 --- !u!82 &-3196216814353461309
 AudioSource:
   m_ObjectHideFlags: 0
@@ -362,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7059577797132837871, guid: cc90a9053fdae1f48a2612534594d625, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7059577797132837871, guid: cc90a9053fdae1f48a2612534594d625, type: 3}
       propertyPath: m_Center.y
