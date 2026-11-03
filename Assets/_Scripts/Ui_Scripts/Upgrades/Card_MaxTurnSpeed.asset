@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Max Turn Speed
   description: Boosts max player turn speed!
   upgradeID: maxTurnSpd
-  modifierValue: 10
+  modifierValue: 15

@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Regen Rate
   description: "Upgrade the rate \nyour health regenerates!"
   upgradeID: regenRate
-  modifierValue: 0.1
+  modifierValue: 0.4

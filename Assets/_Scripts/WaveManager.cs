@@ -15,10 +15,14 @@ public class WaveManager : MonoBehaviour
     public TextMeshProUGUI enemiesRemaining;
     public TextMeshProUGUI waveUi;
 
+    [Header("UI vars")]
+    private int totalEnemiesAlive = 0;
+
     [Header("Wave Configuration Settings")]
     public int currentWave = 1;
     public int enemiesToSpawn = 3;
     private bool isWaveActive = false;
+    public float spawnIntervalDelay = 2.5f;
 
     [Header("Dynamic Radius Bounds")]
     [Tooltip("Minimum distance from player (Keep just off-screen)")]
@@ -48,21 +52,43 @@ public class WaveManager : MonoBehaviour
     {
         if (!isWaveActive) return;
 
-        // Ensure we always possess a valid player location update step
-        if (playerObj != null)
+        if (playerObj != null) playerTransform = playerObj.transform;
+    }
+
+    private IEnumerator StartNextWave()
+    {
+        // 1. Instantly update the wave number layout when the wave begins
+        isWaveActive = true;
+        totalEnemiesAlive = 0;
+        UpdateUIDisplay();
+
+        yield return new WaitForSeconds(1f);
+
+        for (int i = 0; i < enemiesToSpawn; i++)
         {
-            playerTransform = playerObj.transform;
+            Vector3 spawnPosition = CalculateRandomRadiusPosition();
+
+            Vector3 lookDirection = (playerTransform != null) ? (playerTransform.position - spawnPosition).normalized : Vector3.forward;
+            lookDirection.y = 0f;
+            Quaternion spawnRotation = (lookDirection.sqrMagnitude > 0.001f) ? Quaternion.LookRotation(lookDirection) : Quaternion.identity;
+
+            // 2. Spawn the enemy and immediately add it to our live counter math
+            Instantiate(enemyPrefab, spawnPosition, spawnRotation);
+            totalEnemiesAlive++;
+            UpdateUIDisplay();
+
+            yield return new WaitForSeconds(spawnIntervalDelay);
         }
+    }
 
-        activeEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+    // PUBLIC FUNCTION: Call this from the enemy health script right when they blow up!
+    public void EnemyKilled()
+    {
+        totalEnemiesAlive--;
+        UpdateUIDisplay();
 
-        if (enemiesRemaining != null)
-            enemiesRemaining.text = ("Enemies: " + activeEnemies.Length.ToString());
-
-        if (waveUi != null)
-            waveUi.text = ("Wave: " + currentWave);
-
-        if (activeEnemies.Length == 0)
+        // Check win condition instantly here instead of checking every frame in Update
+        if (totalEnemiesAlive <= 0)
         {
             isWaveActive = false;
             Debug.Log("Wave cleared successfully");
@@ -70,55 +96,21 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private IEnumerator StartNextWave()
+    private void UpdateUIDisplay()
     {
-        yield return new WaitForSeconds(1f);
-
-        // Fallback finder safety step
-        if (playerTransform == null && playerObj != null)
-        {
-            playerTransform = playerObj.transform;
-        }
-
-        // Spawning loop rewritten to calculate random points out on the field
-        for (int i = 0; i < enemiesToSpawn; i++)
-        {
-            Vector3 spawnPosition = CalculateRandomRadiusPosition();
-
-            // Instantiate the enemy unit facing toward the center player coordinate location
-            Vector3 lookDirection = (playerTransform != null) ? (playerTransform.position - spawnPosition).normalized : Vector3.forward;
-            lookDirection.y = 0f; // Lock horizontal horizon vectors
-            Quaternion spawnRotation = (lookDirection.sqrMagnitude > 0.001f) ? Quaternion.LookRotation(lookDirection) : Quaternion.identity;
-
-            Instantiate(enemyPrefab, spawnPosition, spawnRotation);
-
-            // Stagger spawn frames to prevent frame stuttering spikes
-            yield return new WaitForSeconds(0.5f);
-        }
-
-        Debug.Log("Spawning loop finished successfully!");
-        isWaveActive = true;
+        if (enemiesRemaining != null) enemiesRemaining.text = "Enemies: " + totalEnemiesAlive;
+        if (waveUi != null) waveUi.text = "Wave: " + currentWave;
     }
 
     private Vector3 CalculateRandomRadiusPosition()
     {
-        // Safe baseline if player is destroyed or missing
-        if (playerTransform == null)
-        {
-            return new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
-        }
+        if (playerTransform == null) return new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
 
-        // 1. Choose a completely random direction vector heading (0 to 360 degrees in radians)
         float randomAngle = Random.Range(0f, Mathf.PI * 2f);
-
-        // 2. Select a random distance stepping factor boundary space range limits
         float randomDistance = Random.Range(minimumSpawnDistance, maximumSpawnDistance);
 
-        // 3. Shift offset vectors outward matching the player's core anchor footprint center point
         float spawnX = playerTransform.position.x + Mathf.Cos(randomAngle) * randomDistance;
         float spawnZ = playerTransform.position.z + Mathf.Sin(randomAngle) * randomDistance;
-
-        // 4. Force surface ground terrain Y height matching plane boundaries
         float spawnY = playerTransform.position.y;
 
         return new Vector3(spawnX, spawnY, spawnZ);
@@ -126,14 +118,7 @@ public class WaveManager : MonoBehaviour
 
     private void OnWaveCleared()
     {
-        if (isWaveActive) return;
-
-        // Open upgradeMenu
-        if (upgradeMenu != null)
-        {
-            upgradeMenu.ToggleMenu();
-        }
-
+        if (upgradeMenu != null) upgradeMenu.ToggleMenu();
         currentWave++;
         enemiesToSpawn += 2;
     }
@@ -143,14 +128,11 @@ public class WaveManager : MonoBehaviour
         StartCoroutine(StartNextWave());
     }
 
-    // Draws the invisible boundaries inside the editor viewport scene tab grid layout view
     private void OnDrawGizmosSelected()
     {
         if (playerObj == null) return;
-
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(playerObj.transform.position, minimumSpawnDistance);
-
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(playerObj.transform.position, maximumSpawnDistance);
     }

@@ -32,6 +32,11 @@ public class Enemy_Health : MonoBehaviour
 
     private void Die()
     {
+        WaveManager manager = FindFirstObjectByType<WaveManager>();
+        if (manager != null)
+        {
+            manager.EnemyKilled(); // Subtracts 1 from the live counter instantly
+        }
         Destroy(gameObject);
     }
 }

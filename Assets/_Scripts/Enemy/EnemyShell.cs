@@ -10,7 +10,7 @@ using UnityEngine;
 public class EnemyShell : MonoBehaviour
 {
     [Header("Flight")]
-    public float speed = 10f;
+    public float speed = 7f;
     public float lifetime = 20f;
 
     [Header("Damage")]

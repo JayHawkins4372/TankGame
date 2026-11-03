@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Fire Rate
   description: Upgrade your firing rate!
   upgradeID: spawnInterval
-  modifierValue: 0.1
+  modifierValue: 0.3

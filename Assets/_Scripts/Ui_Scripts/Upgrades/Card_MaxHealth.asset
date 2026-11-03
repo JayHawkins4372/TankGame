@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Max Health
   description: Increase Max Health!
   upgradeID: maxHealth
-  modifierValue: 10
+  modifierValue: 20
