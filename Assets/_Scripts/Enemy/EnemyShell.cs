@@ -17,7 +17,9 @@ public class EnemyShell : MonoBehaviour
     public float damage = 10f;
     public string scriptGraphDamageEvent = "TakeDamage";
 
-    
+
+    [SerializeField] GameObject damagePopupPrefab; // for Ui
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,12 +36,14 @@ public class EnemyShell : MonoBehaviour
     {
         if (FindTagged(collision.transform, "Enemy") !=null) return;
 
-        Transform player = FindTagged(collision.transform, "Player");
-        if (player != null) HurtPlayer(player);
+        if (collision.gameObject.CompareTag("Player") || collision.transform.root.CompareTag("Player"))
+        {
+            Transform player = FindTagged(collision.transform, "Player");
 
-        Debug.Log("Shell destroyed by hitting: " + collision.gameObject.name, collision.gameObject);
+            if (player != null) HurtPlayer(player);
+        }
 
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     static Transform FindTagged(Transform t, string tag)
