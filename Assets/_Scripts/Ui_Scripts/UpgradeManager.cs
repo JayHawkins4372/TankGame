@@ -150,7 +150,7 @@ public class UpgradeManager : MonoBehaviour
         string visualText = $"{chosenUpgrade.upgradeName} +{chosenUpgrade.modifierValue}";
         if (variableName == "spawnInterval")
         {
-            visualText = $"{chosenUpgrade.upgradeName} Up!";
+            visualText = $"{chosenUpgrade.upgradeName} {chosenUpgrade.modifierValue}";
         }
 
         // 1. First look up the parent chain

@@ -16,12 +16,21 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private GameObject upgradePopupPrefab;
     [SerializeField] private Transform playerTransform;
 
+    [Header("Mobile Interface References")]
+    // 1. DRAG 'PlayerMobileControl' GAMEOBJECT INTO THIS SLOT IN THE INSPECTOR
+    [SerializeField] private GameObject playerMobileControlGroup;
+
     void Start()
     {
         //menu is hidden when the game first starts
         if (menuPanel != null)
         {
             menuPanel.SetActive(false);
+        }
+
+        if (playerMobileControlGroup == null)
+        {
+            playerMobileControlGroup = GameObject.Find("PlayerMobileControl");
         }
     }
 
@@ -39,6 +48,11 @@ public class UpgradeMenu : MonoBehaviour
     {
         isMenuOpen = !isMenuOpen;
         menuPanel.SetActive(isMenuOpen);
+
+        if (playerMobileControlGroup != null)
+        {
+            playerMobileControlGroup.SetActive(!isMenuOpen);
+        }
 
         //Pause game while menu is open
         if (isMenuOpen)

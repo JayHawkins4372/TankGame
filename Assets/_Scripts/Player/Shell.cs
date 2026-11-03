@@ -35,6 +35,10 @@ public class Shell : MonoBehaviour
         {
             return;
         }
+        else if (collision.gameObject.CompareTag("EnemyShell") || collision.transform.root.CompareTag("EnemyShell"))
+        {
+            return;
+        }
         // 1. Check if the object we ran into has the "Enemy" tag or its parent
         else if (collision.gameObject.CompareTag("Enemy") || collision.transform.root.CompareTag("Enemy"))
         {
@@ -66,10 +70,7 @@ public class Shell : MonoBehaviour
             return;
         }
 
-        else if (collision.gameObject.CompareTag("EnemyShell") || collision.transform.root.CompareTag("EnemyShell"))
-        {
-            return;
-        }
+
         else Destroy(gameObject);
         // Destroy this shell immediately on impact
         //Destroy(gameObject);

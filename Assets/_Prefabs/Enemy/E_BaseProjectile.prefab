@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 7942864118318849246}
   m_Layer: 9
   m_Name: E_BaseProjectile
-  m_TagString: Untagged
+  m_TagString: EnemyShell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
