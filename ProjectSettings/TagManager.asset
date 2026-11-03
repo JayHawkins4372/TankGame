@@ -9,6 +9,7 @@ TagManager:
   - VerticalJoystick
   - Crops
   - EnemyShell
+  - Terrain
   layers:
   - Default
   - TransparentFX
