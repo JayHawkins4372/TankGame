@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Movement Speed
   description: Boosts Player Movement speed!
   upgradeID: moveSpd
-  modifierValue: 1
+  modifierValue: 2

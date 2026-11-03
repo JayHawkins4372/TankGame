@@ -508,10 +508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b576f3114d7552d4e95274da3289b253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShell
-  speed: 10
+  speed: 7
   lifetime: 5
   damage: 10
   scriptGraphDamageEvent: TakeDamage
+  damagePopupPrefab: {fileID: 0}
 --- !u!33 &7982378755937070589
 MeshFilter:
   m_ObjectHideFlags: 0

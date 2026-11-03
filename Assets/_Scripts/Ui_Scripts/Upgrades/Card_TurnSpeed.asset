@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Turn Speed
   description: Boosts Player turn speed!
   upgradeID: turnSpd
-  modifierValue: 2
+  modifierValue: 4

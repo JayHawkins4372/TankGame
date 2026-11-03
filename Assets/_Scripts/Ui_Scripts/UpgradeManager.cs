@@ -58,8 +58,8 @@ public class UpgradeManager : MonoBehaviour
             UpgradeData selectedUpgrade = temporaryPool[randomIndex];
 
             activeUpgradesInSlots.Add(selectedUpgrade);
-        //Prevents duplicates
-            temporaryPool.RemoveAt(randomIndex); 
+            //Prevents duplicates
+            temporaryPool.RemoveAt(randomIndex);
         }
 
         Debug.Log($"[UpgradeManager] Successfully generated {activeUpgradesInSlots.Count} random cards!");
@@ -84,9 +84,9 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-        public void SelectSlot0() => SelectUpgrade(0);
-        public void SelectSlot1() => SelectUpgrade(1);
-        public void SelectSlot2() => SelectUpgrade(2);
+    public void SelectSlot0() => SelectUpgrade(0);
+    public void SelectSlot1() => SelectUpgrade(1);
+    public void SelectSlot2() => SelectUpgrade(2);
 
     public void SelectUpgrade(int slotIndex)
     {
@@ -96,7 +96,7 @@ public class UpgradeManager : MonoBehaviour
         selectedSlotIndex = slotIndex;
     }
 
-    public void ExecuteUpgrade(int selectedSlotIndex)
+    public void ExecuteUpgrade()
     {
         //check if already upgraded
         if (madeSelection) return;
@@ -139,11 +139,11 @@ public class UpgradeManager : MonoBehaviour
                     break;
             }
         }
-            //If player chose upgrade, disable upgrade buttons
-            for (int i = 0; i < upgradeButtons.Length; i++)
-            {
-                upgradeButtons[i].interactable = false;
-            }
+        //If player chose upgrade, disable upgrade buttons
+        for (int i = 0; i < upgradeButtons.Length; i++)
+        {
+            upgradeButtons[i].interactable = false;
+        }
 
         //upgradeUiPopup
         // 1. Format the text string nicely based on whether it's a positive addition or a negative interval cut
@@ -155,19 +155,18 @@ public class UpgradeManager : MonoBehaviour
 
         // 1. First look up the parent chain
         UpgradeMenu menuScript = GetComponentInParent<UpgradeMenu>();
+        if (menuScript == null) menuScript = FindAnyObjectByType<UpgradeMenu>();
 
-        // 2. FIXED: Removed "Object." prefix entirely to stop the namespace conflict.
-        // We use FindFirstObjectByType directly, or its fallback alternative below.
-        if (menuScript == null)
+        // 1. Send the text info to the popup generator FIRST while the manager is alive
+        if (menuScript != null)
         {
-            menuScript = FindAnyObjectByType<UpgradeMenu>();
-
-            // If your Unity version prefers the older stable naming convention:
-            if (menuScript == null)
-            {
-                menuScript = FindAnyObjectByType<UpgradeMenu>();
-            }
+            menuScript.TriggerUpgradePopup(visualText);
         }
+        else
+        {
+            Debug.LogError("[UpgradeManager] Could not find UpgradeMenu to trigger popup!");
+        }
+
 
         // 3. Trigger the popup text cleanly
         if (menuScript != null)

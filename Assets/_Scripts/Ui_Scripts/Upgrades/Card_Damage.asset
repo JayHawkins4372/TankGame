@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: Shell Damage
   description: Upgrade your shell damage!
   upgradeID: damage
-  modifierValue: 1
+  modifierValue: 3

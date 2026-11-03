@@ -65,6 +65,11 @@ public class Shell : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        else if (collision.gameObject.CompareTag("EnemyShell") || collision.transform.root.CompareTag("EnemyShell"))
+        {
+            return;
+        }
         else Destroy(gameObject);
         // Destroy this shell immediately on impact
         //Destroy(gameObject);
