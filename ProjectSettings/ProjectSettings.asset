@@ -275,7 +275,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 2
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/CAGD377/VCorpsDocs/user.keystore
+  AndroidKeystoreName: C:/Users/jonat/Documents/TankGameKey/user.keystore
   AndroidKeyaliasName: turretkey
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidEnableArm64MTE: 0
