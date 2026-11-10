@@ -9,6 +9,8 @@ public class WaveManager : MonoBehaviour
 {
     [Header("Prefabs & Systems")]
     public GameObject enemyPrefab;
+    public GameObject lightEnemy;
+    public GameObject heavyEnemy;
     public UpgradeMenu upgradeMenu;
 
     [Header("UI Display Components")]
@@ -64,6 +66,12 @@ public class WaveManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        List<GameObject> enemyPool = new List<GameObject>();
+
+        enemyPool.Add(enemyPrefab);
+        enemyPool.Add(lightEnemy);
+        enemyPool.Add(heavyEnemy);
+
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             Vector3 spawnPosition = CalculateRandomRadiusPosition();
@@ -73,7 +81,9 @@ public class WaveManager : MonoBehaviour
             Quaternion spawnRotation = (lookDirection.sqrMagnitude > 0.001f) ? Quaternion.LookRotation(lookDirection) : Quaternion.identity;
 
             // 2. Spawn the enemy and immediately add it to our live counter math
-            Instantiate(enemyPrefab, spawnPosition, spawnRotation);
+            int randomIndex = Random.Range(0, enemyPool.Count);
+            GameObject chosenEnemyPrefab = enemyPool[randomIndex];
+            Instantiate(chosenEnemyPrefab, spawnPosition, spawnRotation);
             totalEnemiesAlive++;
             UpdateUIDisplay();
 
