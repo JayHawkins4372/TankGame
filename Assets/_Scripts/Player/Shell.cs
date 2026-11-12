@@ -33,7 +33,7 @@ public class Shell : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") || collision.transform.root.CompareTag("Player"))
         {
-            Debug.Log("Found player, ignored collision");
+           // Debug.Log("Found player, ignored collision");
             return;
 
         }
@@ -43,7 +43,7 @@ public class Shell : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Terrain") || collision.transform.root.CompareTag("Terrain"))
         {
-            Debug.Log("hit terrain, ignoring collision");
+          //  Debug.Log("hit terrain, ignoring collision");
             return;
         }
         // 1. Check if the object we ran into has the "Enemy" tag or its parent
@@ -54,7 +54,7 @@ public class Shell : MonoBehaviour
             if (enemy != null)
             {
                 enemy.takeDamage(damage);
-                Debug.Log("Found and dealt damage to enemy");
+              //  Debug.Log("Found and dealt damage to enemy");
 
                 //for damage Ui
                 Vector3 spawnPos = enemy.transform.position + Vector3.up * 2.5f;
@@ -80,7 +80,7 @@ public class Shell : MonoBehaviour
 
         else
         {
-            Debug.Log("Collided with something else, destroying self");
+          //  Debug.Log("Collided with something else, destroying self");
             Destroy(gameObject);
             // Destroy this shell immediately on impact
             //Destroy(gameObject);

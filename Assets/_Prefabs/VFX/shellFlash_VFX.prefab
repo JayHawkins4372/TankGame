@@ -4949,15 +4949,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1768680997731848288, guid: 94a4ee1ec33a4ce4897d9dfb0761da1a, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1768680997731848288, guid: 94a4ee1ec33a4ce4897d9dfb0761da1a, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.08
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1768680997731848288, guid: 94a4ee1ec33a4ce4897d9dfb0761da1a, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.06
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 4067195678992427121, guid: 94a4ee1ec33a4ce4897d9dfb0761da1a, type: 3}
       propertyPath: m_LocalPosition.x
