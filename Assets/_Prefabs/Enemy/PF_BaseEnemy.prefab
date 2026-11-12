@@ -79,7 +79,7 @@ MonoBehaviour:
   FireSound: {fileID: 8300000, guid: 40d4b0998ce41c444a677f23956f70f6, type: 3}
   turret: {fileID: 3629666637850009790}
   muzzle: {fileID: 427756285625127964}
-  shellPrefab: {fileID: -650737501917613094, guid: 8318692836596574daeaf8547f037ffa, type: 3}
+  shellPrefab: {fileID: 2894788756295040621, guid: 6ecb4d5f912cd0d4e93598dc7ba2842b, type: 3}
   turretTurnSpeed: 120
   rangeTolerance: 5
   marginOfError: 3
