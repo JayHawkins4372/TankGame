@@ -172,18 +172,8 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"startHealth","value":{"$content":100.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"VignetteIntensity","value":{"$content":0.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"turretModel","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"hullModel","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"wheelsModel","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"trackLModel","value":{"$content":3,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"trackRModel","value":{"$content":4,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-    _objectReferences:
-    - {fileID: 2622996705696294418}
-    - {fileID: 5162123771249044869}
-    - {fileID: 2397513101859020491}
-    - {fileID: 3548388267648749831}
-    - {fileID: 1726612342204758439}
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!114 &1729410035311164527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,11 +388,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1225966569106733660, guid: 864c65ad00aa9624bbfb02a819abb36a, type: 3}
   m_PrefabInstance: {fileID: 1837231066498152450}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2622996705696294418 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4402803481772236304, guid: 864c65ad00aa9624bbfb02a819abb36a, type: 3}
-  m_PrefabInstance: {fileID: 1837231066498152450}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2838629396277859952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -472,11 +457,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9673abf2308f0174783384051ee4cfa3, type: 3}
---- !u!1 &3548388267648749831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1610808935009322871, guid: 9673abf2308f0174783384051ee4cfa3, type: 3}
-  m_PrefabInstance: {fileID: 2838629396277859952}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4212476405271645117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2094576925496434125, guid: 9673abf2308f0174783384051ee4cfa3, type: 3}
@@ -613,11 +593,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33950174abb9cb248abcd6bf40005726, type: 3}
---- !u!1 &1726612342204758439 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8309549883915306712, guid: 33950174abb9cb248abcd6bf40005726, type: 3}
-  m_PrefabInstance: {fileID: 7252866128551247743}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2071084539477435165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8654409109499108450, guid: 33950174abb9cb248abcd6bf40005726, type: 3}
@@ -729,18 +704,8 @@ PrefabInstance:
       addedObject: {fileID: 2071084539477435165}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a6e7576f1cd11f4e884090ef9493618, type: 3}
---- !u!1 &2397513101859020491 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5386448882489403844, guid: 9a6e7576f1cd11f4e884090ef9493618, type: 3}
-  m_PrefabInstance: {fileID: 7747651300018517775}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2952210818549550513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4863170543786162878, guid: 9a6e7576f1cd11f4e884090ef9493618, type: 3}
-  m_PrefabInstance: {fileID: 7747651300018517775}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5162123771249044869 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3181410466875595402, guid: 9a6e7576f1cd11f4e884090ef9493618, type: 3}
   m_PrefabInstance: {fileID: 7747651300018517775}
   m_PrefabAsset: {fileID: 0}
