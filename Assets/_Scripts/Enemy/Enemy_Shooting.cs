@@ -1,7 +1,7 @@
 /*
  *Author[Lopez-Sotelo, Jorge]
  * Date Created[09 / 20 / 2026]
- * Last Updated[10 / 05 / 2026]
+ * Last Updated[11 / 12 / 2026]
  * []
  */
 using NUnit.Framework.Constraints;
@@ -23,6 +23,7 @@ public class Enemy_Shooting : MonoBehaviour
     [SerializeField] Transform turret;
     [SerializeField] Transform muzzle;
     [SerializeField] EnemyShell shellPrefab;
+    public GameObject shellVFX;
 
 
     [Header("Aiming")]
@@ -162,6 +163,7 @@ public class Enemy_Shooting : MonoBehaviour
 
         // 4. Spawn the enemy shell using your player's exact method
         EnemyShell shell = Instantiate(shellPrefab, customPosition, customRotation);
+        GameObject spawnedVFX = Instantiate(shellVFX, customPosition, customRotation);
 
         shell.speed = shellSpeed;
         shell.damage = shellDamage;

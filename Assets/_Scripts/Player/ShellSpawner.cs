@@ -7,6 +7,7 @@ public class ShellSpawner : MonoBehaviour
 {
     public GameObject shellToSpawn;
     public float spawnInterval = 2f;
+    public GameObject shellVFX;
 
     public float baseShellDamage = 10f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +40,7 @@ public class ShellSpawner : MonoBehaviour
             Vector3 customPosition = transform.position + transform.TransformDirection(positionOffset);
 
            GameObject spawnedShell = Instantiate(shellToSpawn, customPosition, customRotation);
+            GameObject spawnedVFX = Instantiate(shellVFX, customPosition, customRotation);
 
             Shell shellScript = spawnedShell.GetComponent<Shell>();
             if (shellScript != null)

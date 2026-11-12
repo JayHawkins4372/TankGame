@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.07
       objectReference: {fileID: 0}
+    - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: shellVFX
+      value: 
+      objectReference: {fileID: 4558351016158574013, guid: 3ef56c1ba49a23a42961a82aadd0a6e6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

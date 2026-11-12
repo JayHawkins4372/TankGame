@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 896874020524151711}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008, y: 1.889, z: 2.185}
+  m_LocalPosition: {x: 0, y: 1.406, z: 2.581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShellSpawner
   shellToSpawn: {fileID: 3221009303726223392, guid: 15d7bd5218e59114fbeb5ab8778ad972, type: 3}
   spawnInterval: 2
+  shellVFX: {fileID: 4558351016158574013, guid: 3ef56c1ba49a23a42961a82aadd0a6e6, type: 3}
   baseShellDamage: 10
 --- !u!1 &6117018059500182789
 GameObject:
@@ -385,7 +386,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6970086680720263545, guid: 864c65ad00aa9624bbfb02a819abb36a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1225966569106733660, guid: 864c65ad00aa9624bbfb02a819abb36a, type: 3}
