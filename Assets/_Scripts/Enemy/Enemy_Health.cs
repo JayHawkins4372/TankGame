@@ -1,11 +1,14 @@
 //Author: Wade lawler
 //Last Modified: 10/13/26
+using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 public class Enemy_Health : MonoBehaviour
 {
     public float maxHealth = 100;
     public float currentHealth;
+    public GameObject[] pickupArray;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +29,7 @@ public class Enemy_Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            TrySpawnPickup();
             Die();
         }
     }
@@ -38,5 +42,20 @@ public class Enemy_Health : MonoBehaviour
             manager.EnemyKilled(); // Subtracts 1 from the live counter instantly
         }
         Destroy(gameObject);
+    }
+    private void TrySpawnPickup()
+    {
+        int chanceNumber;
+        chanceNumber = Random.Range(1, 10);
+        if(chanceNumber >= 6)
+        {
+            //Get random item from pickuplist and spawn it
+        
+            GameObject.Instantiate(pickupArray[Random.Range(0, pickupArray.Length)], this.transform.parent);
+        }
+        else
+        {
+            return;
+        }
     }
 }

@@ -277,6 +277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Health
   maxHealth: 30
   currentHealth: 0
+  pickupArray:
+  - {fileID: 1642728967933877893, guid: 0106e7303255fbf42a2d002165ad3ebd, type: 3}
 --- !u!1001 &315546531904664639
 PrefabInstance:
   m_ObjectHideFlags: 0
