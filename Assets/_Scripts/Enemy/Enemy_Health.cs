@@ -9,6 +9,7 @@ public class Enemy_Health : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public GameObject[] pickupArray;
+    Vector3 spawnPoint;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,11 +48,11 @@ public class Enemy_Health : MonoBehaviour
     {
         int chanceNumber;
         chanceNumber = Random.Range(1, 10);
-        if(chanceNumber >= 6)
+        if(chanceNumber == 10)
         {
             //Get random item from pickuplist and spawn it
-        
-            GameObject.Instantiate(pickupArray[Random.Range(0, pickupArray.Length)], this.transform.parent);
+            Vector3 spawnPoint = transform.position + (Vector3.up * 1);
+            Instantiate(pickupArray[Random.Range(0, pickupArray.Length)], spawnPoint, transform.rotation);
         }
         else
         {
