@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1807947584530225911, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.655
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1807947584530225911, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.516
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1807947584530225911, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.639
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1807947584530225911, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.07
       objectReference: {fileID: 0}
+    - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: turret
+      value: 
+      objectReference: {fileID: 1275556722217916628, guid: 8a4a9543f3dd8e54ba09adfa05f5248e, type: 3}
     - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: shellVFX
       value: 
