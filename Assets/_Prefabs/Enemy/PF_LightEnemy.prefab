@@ -174,15 +174,23 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 6f9366daa44f7e0449856bb2a50ec6ca, type: 3}
     - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: firingRate
-      value: 0.002
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: shellSpeed
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: shootRange
-      value: 40
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: windupTime
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: shellDamage
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8629346814010676661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: turretTurnSpeed

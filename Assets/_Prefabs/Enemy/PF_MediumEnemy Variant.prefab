@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 428106976097857307, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3123390215366779845, guid: 2ae407bbca36cef4097331aa769b2554, type: 3}
     - target: {fileID: 1033670718797059661, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: maxHealth
       value: 40
@@ -64,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3265713523294082381, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 701238088914367160, guid: d5946ddba7c218d4d80118be9cd2f357, type: 3}
     - target: {fileID: 4186691643313666221, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

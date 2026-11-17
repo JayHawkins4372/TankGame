@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 31af07c819a7d974b9f23c13a4603b0a, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 89f9c23fe0577dc4f8f2a43cd87f9649, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1697324474286938256, guid: 89f9c23fe0577dc4f8f2a43cd87f9649, type: 3}
     - target: {fileID: 919132149155446097, guid: 89f9c23fe0577dc4f8f2a43cd87f9649, type: 3}
       propertyPath: m_Name
       value: Medium_Track_L
