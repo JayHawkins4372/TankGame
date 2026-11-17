@@ -10,6 +10,8 @@ TagManager:
   - Crops
   - EnemyShell
   - Terrain
+  - Bounds
+  - Bounds2
   layers:
   - Default
   - TransparentFX
