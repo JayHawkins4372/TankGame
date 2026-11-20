@@ -28,6 +28,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -5495902117074765545, guid: 12c3c6460daa7424284fded32dc844c0, type: 3}
+    - target: {fileID: 1099245790373312338, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099245790373312338, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099245790373312338, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1599910758896155278, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: Distance
       value: 6
@@ -104,6 +116,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -2901204207885461864, guid: e4bd64e1398e1a9469c3a53a86d21fd9, type: 3}
+    - target: {fileID: 3629666637850009790, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629666637850009790, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629666637850009790, guid: c693b1c2806aa11468656f05552461dd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4102380883762510071, guid: c693b1c2806aa11468656f05552461dd, type: 3}
       propertyPath: m_Mesh
       value: 
